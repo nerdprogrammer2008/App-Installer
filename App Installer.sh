@@ -4,12 +4,14 @@ read app
 
 winget search $app
 
-echo "Type the ID of the app you want to install"
+echo "Type the ID of the app you want to install:"
 read ID
 
 echo "Installing $app"
 
-winget install --id $ID
+touch installerbashlogs.txt
+
+winget install --id $ID >> installerbashlogs.txt
 
 
 echo "$app Installed"
